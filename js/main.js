@@ -49,6 +49,7 @@ function processFile(event) {
  */
 function sendFileToCloudVision(content) {
   var type = $("#fileform [name=type]").val();
+  console.log(type);
 
   // Strip out the file prefix when you convert to json.
   var request = {
@@ -57,7 +58,7 @@ function sendFileToCloudVision(content) {
         content: content
       },
       features: [{
-        type: type,
+        type: "LABEL_DETECTION",
         maxResults: 200
       }]
     }]
