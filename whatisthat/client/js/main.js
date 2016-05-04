@@ -63,14 +63,14 @@ function sendFileToCloudVision(content) {
     }]
   };
 
-  $('#results').text('Loading...');
+  $('#results-container').text('I see...');
 
   $.post({
     url: CV_URL,
     data: JSON.stringify(request),
     contentType: 'application/json'
   }).fail(function(jqXHR, textStatus, errorThrown) {
-    $('#results').text('ERRORS: ' + textStatus + ' ' + errorThrown);
+    $('#results-container').text('ERRORS: ' + textStatus + ' ' + errorThrown);
   }).done(displayJSON);
 }
 
@@ -87,5 +87,5 @@ function displayJSON(data) {
   console.log('Descriptions: ', labels);
 
   // var contents = JSON.stringify(data, null, 4);
-  $("#results").text(labels);
+  $("#results-container").text(labels);
 }
