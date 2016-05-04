@@ -49,7 +49,6 @@ function processFile(event) {
  */
 function sendFileToCloudVision(content) {
   var type = $("#fileform [name=type]").val();
-  console.log(type);
 
   // Strip out the file prefix when you convert to json.
   var request = {
@@ -65,6 +64,7 @@ function sendFileToCloudVision(content) {
   };
 
   $('#results').text('Loading...');
+
   $.post({
     url: CV_URL,
     data: JSON.stringify(request),
@@ -78,6 +78,14 @@ function sendFileToCloudVision(content) {
  * Displays the results.
  */
 function displayJSON(data) {
-  var contents = JSON.stringify(data, null, 4);
-  $("#results").text(contents);
+  var labels = [];
+
+  data.responses[0].labelAnnotations.forEach(function(elem, idx, arr) {
+    labels.push(elem.description);
+  });
+
+  console.log('Descriptions: ', labels);
+
+  // var contents = JSON.stringify(data, null, 4);
+  $("#results").text(labels);
 }
