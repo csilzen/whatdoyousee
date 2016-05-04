@@ -1,0 +1,105 @@
+body {
+    background-color: #FAEBD7;
+}
+
+
+header {
+    font-family: 'Open Sans', sans-serif;
+    font-size:5vw;
+    font-weight:600;
+    color:#7067CF;
+}
+
+header > span {
+    font-size:6.5vw;
+    font-weight:800;
+    color:#B7C0EE;
+    font-style: italic;
+}
+
+.input-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.input-file + label {
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-size: 5vmin;
+    color: #7B287D;
+    padding: 3px;
+    background-color: white;
+    display: inline-block;
+}
+
+.input-file:focus + label,
+
+.input-file + label:hover {
+    background-color: darkgrey;
+}
+
+.button {
+    border:none;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-size: 5vmin;
+    background-color: white;
+    color: #7B287D;
+}
+
+.button:hover {
+    background-color: darkgrey;
+}
+
+
+
+#container {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    background-color: #e0e0e0;
+    position:absolute;
+    text-align:center;
+    left:25%;
+    width:50%;
+    height:85%;
+    top:5%;
+
+}
+
+#form-container{
+
+}
+
+#button-container{
+
+}
+
+#image-preview{
+
+}
+
+#results-container {
+    color: #7067CF;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 5vmin;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    position: absolute;
+    text-align:center;
+    left:15%;
+    width:70%;
+    height:45%;
+    top:50%;
+}
+
+#bigQ {
+    font-size:7.5vw;
+    color:#7067CF;
+}
