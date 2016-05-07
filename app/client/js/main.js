@@ -101,7 +101,7 @@ function displayJSON(data) {
     labels.push(elem.description);
   });
 
-  console.log('Descriptions: ', labels);
+  // console.log('Descriptions: ', labels);
 
   // var contents = JSON.stringify(data, null, 4);
 
@@ -110,7 +110,7 @@ function displayJSON(data) {
       'text': elem
     }).css('color', DARKPURPLE)
     .appendTo(' #label-container ');
-    console.log('appended', elem);
+    // console.log('appended', elem);
   });
 
 }
