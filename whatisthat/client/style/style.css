@@ -30,7 +30,7 @@ header > span {
     font-family: 'Raleway', sans-serif;
     font-style: normal;
     font-size: 5vmin;
-    color: #7B287D;
+    color: #330C2F;
     padding: 3px;
     background-color: white;
     display: inline-block;
@@ -48,14 +48,32 @@ header > span {
     font-style: normal;
     font-size: 5vmin;
     background-color: white;
-    color: #7B287D;
+    color: #330C2F;
 }
 
 .button:hover {
     background-color: darkgrey;
 }
 
+.img-description {
+    color: white;
+}
 
+.marquee {
+    top: 2%;
+    position: relative;
+    box-sizing: border-box;
+    animation: marquee 25s linear infinite;
+}
+
+.marquee:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0%   { top: -15em }
+    100% { top: 15em }
+}
 
 #container {
     display: -webkit-flex;
@@ -68,6 +86,7 @@ header > span {
     width:50%;
     height:85%;
     top:5%;
+    bottom:5%;
 
 }
 
@@ -79,7 +98,7 @@ header > span {
 
 }
 
-#image-preview{
+#img-preview{
 
 }
 
@@ -90,13 +109,28 @@ header > span {
     display: -webkit-flex;
     display: flex;
     flex-direction: column;
-    background-color: red;
-    position: absolute;
+    background-color: #B7C0EE;
+    position: relative;
     text-align:center;
     left:15%;
     width:70%;
     height:45%;
-    top:50%;
+}
+
+#label-container {
+    overflow: auto;
+    background-color: white;
+    position: absolute;
+    text-align:center;
+    top: 25%;
+    left:15%;
+    width:70%;
+    height:45%;
+    border:none;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-size: 5vmin;
+    color: #7B287D;
 }
 
 #bigQ {

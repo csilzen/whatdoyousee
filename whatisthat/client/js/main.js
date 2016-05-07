@@ -16,7 +16,15 @@
 // var apiKey = "[YOUR API KEY HERE]";
 var CV_URL = "https://vision.googleapis.com/v1/images:annotate?key=" + apiKey;
 
+var PURPLE = '#7B287D';
+var CORNFLOWER = '#7067CF';
+var LIGHTBLUE = '#B7C0EE';
+var MINT = '#CBF3D2';
+var DARKPURPLE = '#330C2F';
+
 $(document).ready(function() {
+
+
   $('#fileform').on('submit', uploadFiles);
 });
 
@@ -30,6 +38,9 @@ function uploadFiles(event) {
   // Grab the file and asynchronously convert to base64.
   var file = $('#fileform [name=fileField]')[0].files[0];
   var reader = new FileReader();
+  reader.onload = function (e) {
+    $('#img').show().attr('src', e.target.result);
+  }
   reader.onloadend = processFile;
   reader.readAsDataURL(file);
 }
@@ -63,7 +74,7 @@ function sendFileToCloudVision(content) {
     }]
   };
 
-  $('#results-container').text('I see...');
+  $('#results-container').append('I see...');
 
   $.post({
     url: CV_URL,
@@ -77,6 +88,12 @@ function sendFileToCloudVision(content) {
 /**
  * Displays the results.
  */
+
+function colorSelect() {
+  var colors = [PURPLE, CORNFLOWER, LIGHTBLUE, MINT];
+
+}
+
 function displayJSON(data) {
   var labels = [];
 
@@ -87,5 +104,13 @@ function displayJSON(data) {
   console.log('Descriptions: ', labels);
 
   // var contents = JSON.stringify(data, null, 4);
-  $("#results-container").text(labels);
+
+  $.each(labels, function(idx, elem) {
+    $('<div/>', {
+      'text': elem
+    }).css('color', DARKPURPLE)
+    .appendTo(' #label-container ');
+    console.log('appended', elem);
+  });
+
 }
